@@ -1,0 +1,24 @@
+<h1>Shopping Cart</h1>
+
+<% if @order_items.any? %>
+  <div id="cart-items">
+    <%= render "orders/show", order: current_order  %>
+    <p id="finalize-link">
+      <%= link_to "Finalize Order", finalize_path %>
+    </p>
+  </div>
+<% else %>
+  <p>Your shopping cart is empty.</p>
+<% end %>
+
+<% if current_user && @previous_orders.any? %>
+  <div class="divider"></div>
+  <h3>Your Order History</h3>
+  <% @previous_orders.each do |order| %>
+    <div class="section">
+      <h4><%= order.updated_at.strftime("%b %-d, %Y") %></h4>
+      <%= render "orders/show", order: order  %>
+      <h6>Order ID: <%= order.id %></h6>
+    </div>
+  <% end %>
+<% end %>

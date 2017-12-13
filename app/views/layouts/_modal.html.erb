@@ -1,0 +1,11 @@
+<div id="modal-<% object.id %>" class="modal modal-fixed-footer">
+  <div class="modal-content">
+
+  </div>
+  <div class="modal-footer">
+    <%= link_to "Close", products_path,
+      class: "modal-action modal-close waves-effect waves-green btn-flat",
+      id: "hide-detail-#{ object.id }",
+      remote: true %>
+  </div>
+</div>

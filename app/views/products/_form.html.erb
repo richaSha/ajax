@@ -1,0 +1,21 @@
+<%= form_for @product do |f| %>
+  <div class="input-field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="input-field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="input-field">
+    <%= f.label :price %>
+    <%= f.number_field :price, step: 0.01 %>
+  </div>
+  <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <%= f.file_field :image %>
+      </div>
+    </div>
+  <%= f.submit "Submit", class: "btn btn-success" %>
+<% end %>
