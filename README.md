@@ -1,4 +1,3 @@
-# ajax
 # Ecommerce
 
 #### _It will show detail of products _
