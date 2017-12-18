@@ -1,1 +1,7 @@
-$('#myModal').html("<%= j render("/product")%>")
+
+$('#product-<%= @product.id %>').after('<%= j render "layouts/modal", object: @product %>');
+$('#modal-<% @product.id %> .modal-content').html('<%= j render "show" %>')
+$('#modal-<% @product.id %>').modal().modal('open');
+$('#hide-detail-<%= @product.id %>').click(function() {
+  $('#modal-<% @product.id %>').remove();
+});
